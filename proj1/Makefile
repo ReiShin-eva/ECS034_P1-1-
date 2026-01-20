@@ -15,5 +15,6 @@ StringUtilsTest.o:
 clean:
   rm -f bin htmlconv lib testbin testobj
 
-#All commands aare instated
+# All commands aare instated
 # Forgot C standards 
+# 
