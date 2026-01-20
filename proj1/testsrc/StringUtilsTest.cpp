@@ -93,9 +93,24 @@ TEST(StringUtilsTest, Join){
 }
 
 TEST(StringUtilsTest, ExpandTabs){
-    
+    EXPECT_EQ(ExpandTabs("\t", 1)," ");
+    EXPECT_EQ(ExpandTabs("a\tb", 1),"a b");
+    EXPECT_EQ(ExpandTabs("ab", 1),"ab");
 }
 
 TEST(StringUtilsTest, EditDistance){
-    
+    EXPECT_EQ(EditDistance("kitten", "sitting"), 3);
+    EXPECT_EQ(EditDistance("skibidi", "SKIBIDI", true), 0);
+    EXPECT_EQ(EditDistance("skibidi", "SKIBIDI", false), 7);
+    EXPECT_EQ(EditDistance("", "SKIBIDI"), 7);
 }
+
+
+
+
+
+
+
+
+
+
