@@ -2,6 +2,9 @@ mkdir -p bin htmlconv lib obj testbin testobj
 # after directory is made, the entire all is made
 
 all: link
+  ./teststrutils
+  
+
 
 link: StringUtils.o StringUtilsTest.o
   g++ -std=c++17 -Wall -Wextra StringUtils.o StringUtilsTest.0 -o teststrutils
@@ -17,4 +20,4 @@ clean:
 
 # All commands aare instated
 # Forgot C standards 
-# 
+# Execute
