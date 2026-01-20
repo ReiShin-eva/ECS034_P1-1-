@@ -31,6 +31,10 @@ TEST(StringUtilsTest, Lower){
 }
 
 TEST(StringUtilsTest, LStrip){
+    EXPECT_EQ(LStrip("    abc"), "abc");
+    EXPECT_EQ(LStrip("abc"), "abc");
+    EXPECT_EQ(LStrip("    "), "abc");
+    EXPECT_EQ(LStrip(""), "");
     
 }
 
