@@ -81,11 +81,15 @@ TEST(StringUtilsTest, Replace){
 }
 
 TEST(StringUtilsTest, Split){
-    
+    EXPECT_EQ(Split("a b  c"), std::vector<std::string>({"a", "b", "", "c"}));
+    EXPECT_EQ(Split("a,b,c", ","), std::vector<std::string>({"a", "b", "c"}));
+    EXPECT_EQ(Split(" ", ""), std::vector<std::string>({"", ""}));
 }
 
 TEST(StringUtilsTest, Join){
-    
+    EXPECT_EQ(Join("-", std::vector<std::string>{"a", "b", "c"}), "a-b-c");
+    EXPECT_EQ(Join("", std::vector<std::string>{"a", "b", "c"}), "abc");
+    EXPECT_EQ(Join("a", std::vector<std::string>{}), "");
 }
 
 TEST(StringUtilsTest, ExpandTabs){
