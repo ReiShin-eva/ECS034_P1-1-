@@ -53,7 +53,10 @@ TEST(StringUtilsTest, Strip){
 }
 
 TEST(StringUtilsTest, Center){
-    
+    EXPECT_EQ(Center("poop", 6), " poop ");
+    EXPECT_EQ(Center("poop", 2), "poop");
+    EXPECT_EQ(Center("", 4), "    ");
+    EXPECT_EQ(Center("poop", 6, '*'), "*poop*");
 }
 
 TEST(StringUtilsTest, LJust){
