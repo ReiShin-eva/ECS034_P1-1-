@@ -25,9 +25,9 @@ TEST(StringUtilsTest, Upper){
 }
 
 TEST(StringUtilsTest, Lower){
-    EXPECT_EQ(Upper("hello"), "HELLO");
-    EXPECT_EQ(Upper("HeLlo"), "HELLO");
-    EXPECT_EQ(Upper(""), "");
+    EXPECT_EQ(Lower("hello"), "hello");
+    EXPECT_EQ(Lower("HeLlo"), "hello");
+    EXPECT_EQ(Lower(""), "");
 }
 
 TEST(StringUtilsTest, LStrip){
