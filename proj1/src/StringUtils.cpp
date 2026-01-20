@@ -76,7 +76,7 @@ std::string Strip(const std::string &str) noexcept{
     bool flag = false;
     std::string out1;
     for(int i = 0; i < out.size(); i++){
-        char c = out[i]
+        char c = out[i]; //forgot ;
         if(flag == false && c == ' '){ continue; } else{ flag = true; out1 = out1 + out[i];}
     }
     return out1;
