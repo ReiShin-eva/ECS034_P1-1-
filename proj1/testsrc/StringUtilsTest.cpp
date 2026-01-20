@@ -60,11 +60,17 @@ TEST(StringUtilsTest, Center){
 }
 
 TEST(StringUtilsTest, LJust){
-    
+    EXPECT_EQ(LJust("poop", 6), "poop  ");
+    EXPECT_EQ(LJust("poop", 2), "poop");
+    EXPECT_EQ(LJust("", 4), "    ");
+    EXPECT_EQ(LJust("poop", 6, '*'), "poop**");
 }
 
 TEST(StringUtilsTest, RJust){
-    
+    EXPECT_EQ(RJust("poop", 6), "  poop");
+    EXPECT_EQ(RJust("poop", 2), "poop");
+    EXPECT_EQ(RJust("", 4), "    ");
+    EXPECT_EQ(RJust("poop", 6, '*'), "**poop");
 }
 
 TEST(StringUtilsTest, Replace){
