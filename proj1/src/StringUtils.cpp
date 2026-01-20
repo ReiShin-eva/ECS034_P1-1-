@@ -16,18 +16,28 @@ std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{
 }
 
 std::string Capitalize(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+    std::string out = str;
+    out[0] = std::toupper(out[0]);
+    for(int i = 1; i < out.size(); i++){
+        out[i] = std::tolower(out[i]);
+    }
+    return out;
 }
 
 std::string Upper(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+    std::string out = str;
+    for(int i = 0; i < str.size(); i++){
+        out[i] = std::toupper(out[i]);
+    }
+    return out;
 }
 
 std::string Lower(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+    std::string out = str;
+    for(int i = 0; i < str.size(); i++){
+        out[i] = std::tolower(out[i]);
+    }
+    return out;
 }
 
 std::string LStrip(const std::string &str) noexcept{
