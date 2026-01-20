@@ -132,8 +132,21 @@ std::string RJust(const std::string &str, int width, char fill) noexcept{
 }
 
 std::string Replace(const std::string &str, const std::string &old, const std::string &rep) noexcept{
-    // Replace code here
-    return "";
+    if(old.empty()){return str;}
+    std::string out;
+    std::string counter;
+    for(int i = 0; i < str.size(); i++){
+        for(int j = 0; j < old.size(); j++){
+            if((i+j) >= str.size()){break;}
+            counter = counter + str[i+j];
+        }
+        if(counter == old){
+            out = out + rep;
+            i = i + rep.size()
+        } else{ out = out + str[i];}
+        counter = "";
+    }
+    return out;
 }
 
 std::vector< std::string > Split(const std::string &str, const std::string &splt) noexcept{
