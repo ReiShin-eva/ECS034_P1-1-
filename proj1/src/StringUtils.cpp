@@ -54,8 +54,11 @@ std::string RStrip(const std::string &str) noexcept{
     std::string out;
     int n = 0;
     for(int i = 0; i < str.size() - n; i++){
-        n = n + 1;
-    } else{ break; }
+        if(str[str.size() - i - 1] == ' '){
+            n = n + 1;
+        }
+        else{ break; }
+    } //wrong if else placement
     for(int i = 0; i < str.size() - n; i++){ out = out + str[i]; }
     return out;
 }
@@ -64,8 +67,11 @@ std::string Strip(const std::string &str) noexcept{
     std::string out;
     int n = 0;
     for(int i = 0; i < str.size() - n; i++){
-        n = n + 1;
-    } else{ break; }
+        if(str[str.size() - i - 1] == ' '){
+            n = n + 1;
+        }
+        else{ break; }
+    }
     for(int i = 0; i < str.size() - n; i++){ out = out + str[i]; }
     bool flag = false;
     std::string out1;
