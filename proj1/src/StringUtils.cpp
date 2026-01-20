@@ -1,9 +1,16 @@
 #include "StringUtils.h"
+#include <vector>;
+#include <string>
 
 namespace StringUtils{
 
 std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{
-    
+    std::string out; 
+    for(int i = 0; i < (str.size() - end); i++){
+        if(i >= start){
+            out = out + str[i];
+        } else{ continue; }
+    }
     return out;
 }
 
