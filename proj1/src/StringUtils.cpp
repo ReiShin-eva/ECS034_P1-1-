@@ -142,7 +142,7 @@ std::string Replace(const std::string &str, const std::string &old, const std::s
         }
         if(counter == old){
             out = out + rep;
-            i = i + rep.size()
+            i = i + old.size() - 1;
         } else{ out = out + str[i];}
         counter = "";
     }
