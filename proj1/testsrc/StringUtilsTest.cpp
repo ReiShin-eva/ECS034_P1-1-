@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 #include "StringUtils.h"
+using namespace StringUtils;
+//StringUtils namespace used to make sure functions can be used
 
 TEST(StringUtilsTest, SliceTest){
     EXPECT_EQ(Slice("abcdef", 1, 4), "bcd");
