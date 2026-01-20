@@ -150,13 +150,39 @@ std::string Replace(const std::string &str, const std::string &old, const std::s
 }
 
 std::vector< std::string > Split(const std::string &str, const std::string &splt) noexcept{
-    // Replace code here
-    return {};
+	std::string look;
+	if(splt == ""){ look = " "; } else{ look = splt; }
+	int count = 1;
+	std::vector<int> idx;
+	std::string counter;	
+	for(int i = 0; i  < str.size(); i++){
+		counter = "";
+		for(int j = 0; j < look.size(); j++){
+			if((i + j) >= str.size()){break;}
+			counter = counter + str[i + j];
+		}
+		if(counter == look){ count++; idx.push_back(i); } else{ continue; }
+		counter = "";
+	}
+	std::vector<std::string> out(count);
+	int start = 0;
+	for(int i = 0; i < idx.size(); i++){
+		out[i] = str.substr(start, idx[i] - start);
+		start = idx[i] + look.size();
+	}
+	out[count - 1] = str.substr(start);
+	return out;
 }
 
 std::string Join(const std::string &str, const std::vector< std::string > &vect) noexcept{
-    // Replace code here
-    return "";
+    std::string out;
+    for(int i = 0; i < vect.size(); i++){
+        out = out + vect[i];
+        if(i < vect.size() - 1){
+            out = out + str;
+        }
+    }
+    return out;
 }
 
 std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
