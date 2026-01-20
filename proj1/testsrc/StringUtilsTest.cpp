@@ -37,16 +37,19 @@ TEST(StringUtilsTest, LStrip){
     EXPECT_EQ(LStrip(""), "");
     
 }
-
+//mistake made, LStrip used not RStrip
 TEST(StringUtilsTest, RStrip){
-    EXPECT_EQ(LStrip("abc    "), "abc");
-    EXPECT_EQ(LStrip("abc"), "abc");
-    EXPECT_EQ(LStrip("    "), "");
-    EXPECT_EQ(LStrip(""), "");
+    EXPECT_EQ(RStrip("abc    "), "abc");
+    EXPECT_EQ(RStrip("abc"), "abc");
+    EXPECT_EQ(RStrip("    "), "");
+    EXPECT_EQ(RStrip(""), "");
 }
 
 TEST(StringUtilsTest, Strip){
-    
+    EXPECT_EQ(Strip("    abc    "), "abc");
+    EXPECT_EQ(Strip("abc"), "abc");
+    EXPECT_EQ(Strip("    "), "");
+    EXPECT_EQ(Strip(""), "");
 }
 
 TEST(StringUtilsTest, Center){
