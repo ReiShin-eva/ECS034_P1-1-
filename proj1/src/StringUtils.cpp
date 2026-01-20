@@ -83,18 +83,52 @@ std::string Strip(const std::string &str) noexcept{
 }
 
 std::string Center(const std::string &str, int width, char fill) noexcept{
-    // Replace code here
-    return "";
+    if(width <= str.size()){
+        return str;
+    } else{
+        int n = width - str.size();
+        std::string out = str;
+        bool left = true;
+        bool right = false;
+        for(int i = 0; i < n; i++){
+            if(left){
+                out = fill + out;
+                right = true;
+                left = false;
+            } else{
+                out = out + fill;
+                right = false;
+                left = true;
+            }
+        }
+        return out;
+    }
 }
 
 std::string LJust(const std::string &str, int width, char fill) noexcept{
-    // Replace code here
-    return "";
+    if(width <= str.size()){
+        return str;
+    } else{
+        int n = width - str.size();
+        std::string out = str;
+        for(int i = 0; i < n; i++){
+            out = fill + out;
+        }
+        return out;
+    }
 }
 
 std::string RJust(const std::string &str, int width, char fill) noexcept{
-    // Replace code here
-    return "";
+    if(width <= str.size()){
+        return str;
+    } else{
+        int n = width - str.size();
+        std::string out = str;
+        for(int i = 0; i < n; i++){
+            out = out + fill;
+        }
+        return out;
+    }
 }
 
 std::string Replace(const std::string &str, const std::string &old, const std::string &rep) noexcept{
