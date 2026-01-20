@@ -4,8 +4,9 @@
 
 namespace StringUtils{
 
-std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{
+std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{ 
     std::string out; 
+    if(start < 0){ start = str.size() - start; } //mistake, forgot to take into account negatice
     for(int i = 0; i < (str.size() - end); i++){
         if(i >= start){
             out = out + str[i];
