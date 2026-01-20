@@ -10,7 +10,11 @@ TEST(StringUtilsTest, SliceTest){
 }
 
 TEST(StringUtilsTest, Capitalize){
-    
+    EXPECT_EQ(Capitalize("hello"), "Hello");
+    EXPECT_EQ(Capitalize("HELLO"), "Hello");
+    EXPECT_EQ(Capitalize("hEllo"), "Hello");
+    EXPECT_EQ(Capitalize(""), "");
+    EXPECT_EQ(Capitalize("a"), "A");
 }
 
 TEST(StringUtilsTest, Upper){
