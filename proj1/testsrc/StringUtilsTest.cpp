@@ -18,11 +18,16 @@ TEST(StringUtilsTest, Capitalize){
 }
 
 TEST(StringUtilsTest, Upper){
-    
+    EXPECT_EQ(Upper("hello"), "HELLO");
+    EXPECT_EQ(Upper("HeLlo"), "HELLO");
+    EXPECT_EQ(Upper(""), "");
+
 }
 
 TEST(StringUtilsTest, Lower){
-    
+    EXPECT_EQ(Upper("hello"), "HELLO");
+    EXPECT_EQ(Upper("HeLlo"), "HELLO");
+    EXPECT_EQ(Upper(""), "");
 }
 
 TEST(StringUtilsTest, LStrip){
