@@ -74,7 +74,10 @@ TEST(StringUtilsTest, RJust){
 }
 
 TEST(StringUtilsTest, Replace){
-    
+    EXPECT_EQ(Replace("skibidi", "i", "o"), "skobodo");
+    EXPECT_EQ(Replace("aaa", "aa", "b"), "ba");
+    EXPECT_EQ(Replace("aaa", "", "o"), "aaa");
+    EXPECT_EQ(Replace("", "i", "o"), "");
 }
 
 TEST(StringUtilsTest, Split){
