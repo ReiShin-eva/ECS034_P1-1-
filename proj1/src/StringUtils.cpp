@@ -186,13 +186,47 @@ std::string Join(const std::string &str, const std::vector< std::string > &vect)
 }
 
 std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
-    // Replace code here
-    return "";
+    std::string out;
+	int col = 0;
+	for(int i = 0; i < str.size(); i++){
+		if(str[i] == '\t'){
+			int spaces = tabsize - (col % tabsize);
+			out.append(spaces, ' ');
+		} else{
+			out += str[i];
+			col++;
+		}
+	}
+	return out;
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{
-    // Replace code here
-    return 0;
+    int n = left.size();
+    int m = right.size();
+	std::string r = right;
+	std::string l = left;
+    if(ignorecase == true){
+		r = Lower(r);
+		l = Lower(l);
+	}
+	int diff = 0;
+	int out = 0;
+	if(n < m){
+		diff = m - n;
+		for(int i = 0; i < l.size(); i++){
+			if(l[i] == r[i]){ out++; }
+		}
+	} else if(n > m){
+		diff = n - m;
+		for(int i = 0; i < r.size(); i++){
+			if(l[i] == r[i]){ out++; }
+		}
+	} else{
+		for(int i = 0; i < r.size(); i++){
+			if(l[i] == r[i]){ out++; }
+		}
+	}
+	return out + diff;
 }
 
 };
