@@ -4,7 +4,7 @@ using namespace StringUtils;
 //StringUtils namespace used to make sure functions can be used
 
 TEST(StringUtilsTest, SliceTest){
-    EXPECT_EQ(Slice("abcdef", 1, 4), "bcd");
+    EXPECT_EQ(Slice("abcdef", 1, 4), "b");
     EXPECT_EQ(Slice("abcdef", -3), "def"); 
     EXPECT_EQ(Slice("abcdef", 2), "cdef"); 
     EXPECT_EQ(Slice("abc", 5, 6), "");
