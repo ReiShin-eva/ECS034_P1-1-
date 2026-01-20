@@ -33,13 +33,16 @@ TEST(StringUtilsTest, Lower){
 TEST(StringUtilsTest, LStrip){
     EXPECT_EQ(LStrip("    abc"), "abc");
     EXPECT_EQ(LStrip("abc"), "abc");
-    EXPECT_EQ(LStrip("    "), "abc");
+    EXPECT_EQ(LStrip("    "), "");
     EXPECT_EQ(LStrip(""), "");
     
 }
 
 TEST(StringUtilsTest, RStrip){
-    
+    EXPECT_EQ(LStrip("abc    "), "abc");
+    EXPECT_EQ(LStrip("abc"), "abc");
+    EXPECT_EQ(LStrip("    "), "");
+    EXPECT_EQ(LStrip(""), "");
 }
 
 TEST(StringUtilsTest, Strip){
