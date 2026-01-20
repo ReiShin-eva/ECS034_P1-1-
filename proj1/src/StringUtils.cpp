@@ -44,7 +44,7 @@ std::string LStrip(const std::string &str) noexcept{
     bool flag = false;
     std::string out;
     for(int i = 0; i < str.size(); i++){
-        char c = str[i]
+        char c = str[i];
         if(flag == false && c == ' '){ continue; } else{ flag = true; out = out + str[i];}
     }
     return out;
